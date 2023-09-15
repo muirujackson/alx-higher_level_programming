@@ -16,7 +16,8 @@ if __name__ == "__main__":
             states AS S WHERE C.state_id = S.id ORDER BY C.id ASC")
     rows = cursor.fetchall()
 
-    for row in rows:
-        print(row)
+    if rows_selected is not None:
+        for row in rows:
+            print(row)
     cursor.close()
     conn.close()
